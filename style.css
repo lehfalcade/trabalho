@@ -1,384 +1,185 @@
-/* Reset e Estilos Base */
+/* ======= VARIÁVEIS ======= */
+:root {
+    --primary: #ff7aa2;
+    --secondary: #ffb6c7;
+    --accent: #ffe5ec;
+    --dark: #5a1e2a;
+    --light: #fff7f9;
+    --radius: 10px;
+    --transition: .3s ease;
+    --shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
+    background: var(--light);
+    color: var(--dark);
+}
+
+.center {
+    text-align: center;
+}
+
+/* ======= HEADER ======= */
+.header {
+    background: var(--primary);
+    padding: 15px 0;
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-list a:hover {
+    opacity: 0.7;
+}
+
+/* ======= HERO ======= */
+.hero {
+    height: 75vh;
+    background: linear-gradient(rgba(255, 122, 162, 0.3), rgba(255, 122, 162, 0.3)),
+                url('https://picsum.photos/1600/900?bakery') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--dark);
+}
+
+.hero-content {
+    background: rgba(255,255,255,0.7);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* ======= BOTÕES ======= */
+.btn {
+    padding: 12px 25px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background: var(--secondary);
+}
+
+/* ======= SEÇÕES ======= */
+.section {
+    padding: 60px 0;
 }
 
 .container {
     width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+    max-width: 1100px;
+    margin: auto;
 }
 
-/* Botões */
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-    font-size: 16px;
-}
-
-.btn.primary {
-    background-color: #f06292; /* Rosa Claro */
-    color: white;
-}
-
-.btn.primary:hover {
-    background-color: #e91e63; /* Rosa Escuro */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.btn.secondary {
-    background-color: transparent;
-    color: #f06292; /* Rosa Claro */
-    border: 2px solid #f06292;
-}
-
-.btn.secondary:hover {
-    background-color: #f0f2ff;
-    transform: translateY(-2px);
-}
-
-/* Cabeçalho */
-header {
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-}
-
-.logo h1 {
-    color: #f06292; /* Rosa Claro */
-    font-size: 28px;
-}
-
-.logo p {
-    font-size: 14px;
-    color: #666;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 30px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #f06292; /* Rosa Claro */
-}
-
-/* Seção Principal */
-.hero {
-    padding: 150px 0 100px;
-    background: linear-gradient(135deg, #f06292 0%, #ec407a 100%); /* Rosa Claro e Rosa Escuro */
-    color: white;
-    margin-top: 80px;
-}
-
-.hero .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.hero-content {
-    flex: 1;
-}
-
-.hero-content h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero-content p {
-    font-size: 20px;
+h2 {
+    text-align: center;
     margin-bottom: 30px;
-    opacity: 0.9;
+    color: var(--dark);
 }
 
-.cta-buttons {
+/* ======= CARDS ======= */
+.cards {
     display: flex;
-    gap: 15px;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
-.hero-image {
-    flex: 1;
+.card {
+    background: white;
+    width: 300px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding-bottom: 20px;
+    overflow: hidden;
     text-align: center;
+    transition: var(--transition);
 }
 
-.hero-image img {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+.card:hover {
+    transform: translateY(-5px);
 }
 
-/* Seções */
-section {
-    padding: 80px 0;
-}
-
-section h2 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 50px;
-    color: #222;
-}
-
-/* Seção Sobre */
-.about {
-    background-color: white;
-}
-
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.feature {
-    text-align: center;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-.feature:hover {
-    transform: translateY(-10px);
-}
-
-.feature i {
-    font-size: 48px;
-    color: #f06292; /* Rosa Claro */
-    margin-bottom: 20px;
-}
-
-.feature h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-
-/* Seção de Cursos */
-.courses {
-    background-color: #f8f9fa;
-}
-
-.course-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.course-card {
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-.course-card:hover {
-    transform: translateY(-10px);
-}
-
-.course-card h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #f06292; /* Rosa Claro */
-}
-
-.course-card p {
-    margin-bottom: 20px;
-    color: #666;
-}
-
-.course-card ul {
-    list-style: none;
-    margin-bottom: 20px;
-}
-
-.course-card ul li {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.course-card ul li i {
-    color: #f06292; /* Rosa Claro */
-    margin-right: 10px;
-}
-
-.price {
-    font-size: 28px;
-    font-weight: 700;
-    color: #f06292; /* Rosa Claro */
-    margin: 20px 0;
-}
-
-/* Seção de Depoimentos */
-.testimonials {
-    background-color: white;
-}
-
-.testimonial-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.testimonial-card {
-    background-color: #f8f9fa;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.testimonial-card p {
-    font-style: italic;
-    margin-bottom: 20px;
-    font-size: 18px;
-}
-
-.author {
-    display: flex;
-    align-items: center;
-}
-
-.author img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 15px;
+.card img {
+    width: 100%;
+    height: 180px;
     object-fit: cover;
 }
 
-.author h4 {
-    margin-bottom: 5px;
+.card h3 {
+    margin: 15px 0 10px;
 }
 
-/* Seção de Contato */
-.contact {
-    background-color: #f8f9fa;
+.card p {
+    padding: 0 15px;
 }
 
-.contact-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
+.preco {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--primary);
 }
 
-.contact-info h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #f06292; /* Rosa Claro */
-}
-
-.contact-info p {
-    margin-bottom: 15px;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-}
-
-.contact-info p i {
-    margin-right: 10px;
-    color: #f06292; /* Rosa Claro */
-}
-
-form {
+/* ======= FORMULÁRIO ======= */
+.form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
 }
 
-form input,
-form textarea {
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    font-family: inherit;
+.form input, .form textarea {
+    padding: 12px;
+    border-radius: var(--radius);
+    border: 1px solid #ffc9d9;
+    background: white;
 }
 
-form input:focus,
-form textarea:focus {
-    outline: none;
-    border-color: #f06292; /* Rosa Claro */
-}
-
-/* Rodapé */
-footer {
-    background-color: #222;
+/* ======= FOOTER ======= */
+.footer {
+    background: var(--primary);
     color: white;
-    padding: 50px 0 20px;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
 }
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.footer-logo h2 {
-    color: #f06292; /* Rosa Claro */
-    margin-bottom: 10px;
-}
-
-.footer-links h4,
-.footer-social h4 {
-    margin-bottom: 20px;
-    font-size: 20px;
-}
-
-.footer-links ul {
-    list-style: none;
-}
-
-.footer-links ul li {
-    margin-bottom: 10px;
-}
-
-.footer-links ul li a {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-links ul li
